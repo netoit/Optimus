@@ -1,0 +1,18 @@
+# To start creating and associating volumes let do following>
+docker volume create <newvolume>
+
+# Check volumes and inspect them
+docker volume ls
+docker volume inspect www
+
+# Variables to know>
+#Driver>	type of driver you use *local by default
+#Mountpoint>	where is volume mounted
+#Name>		name of volume you created
+
+# You can also specify to container which volume it will use, and where to mount
+docker run -d --mount source=www,target=/var/www/hml/ nginx:latest
+
+# On source you can also specify following tags>
+#readonly
+
